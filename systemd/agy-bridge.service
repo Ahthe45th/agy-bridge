@@ -1,0 +1,13 @@
+[Unit]
+Description=Antigravity Bridge Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/.hermes/agy-bridge-venv/bin/python3 %h/Projects/agy-bridge/agy_bridge.py
+Restart=on-failure
+RestartSec=5
+WorkingDirectory=%h/Projects/agy-bridge
+
+[Install]
+WantedBy=default.target
